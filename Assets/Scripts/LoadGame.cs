@@ -9,7 +9,7 @@ class LoadGame : PersistenceDataPlayer
 
     public override void LoadBestPlayer()
     {
-        string path = "C:\\Users\\Carmine\\MyFile.json";
+        string path = Application.persistentDataPath + "/savefile.json";
         if (File.Exists(path))
         {
             string json = File.ReadAllText(path);
@@ -18,11 +18,9 @@ class LoadGame : PersistenceDataPlayer
             BestPlayer = data.PlayerName;
             BestScore = data.PlayerScore;
 
-            Debug.Log(path);
-
         }
-
+        
     }
 
-    public override void SaveBestPlayer(string name, int score) {}
+    public override void SaveBestPlayer(string PlayerName, int PlayerScore) {}
 }

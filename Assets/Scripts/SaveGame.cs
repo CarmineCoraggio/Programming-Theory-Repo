@@ -6,22 +6,19 @@ using UnityEngine;
 [SerializeField]
 class SaveGame : PersistenceDataPlayer
 {
-    private string PlayerName;
-    private int PlayerScore;
     
     public override void LoadBestPlayer() { }
 
-    public override void SaveBestPlayer(string player, int score)
+    public override void SaveBestPlayer(string PlayerName, int PlayerScore)
     {
-        
-            SaveGame data = new SaveGame();
 
-            data.PlayerName = player;
-            data.PlayerScore = score;
+        SaveGame data = new SaveGame
+        {
+            PlayerName = PlayerName,
+            PlayerScore = PlayerScore
+        };
 
-            string json = JsonUtility.ToJson(data);
-
-            File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        string json = JsonUtility.ToJson(data);
+        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
     }
-    }
-
+}

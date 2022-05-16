@@ -10,37 +10,41 @@ public class MenuHandler : MonoBehaviour
 {
 
     [SerializeField] Text PlayerNameInput;
-    public Text MenuPlayer;
-    LoadGame data = new LoadGame();
+    [SerializeField] public Text ScoreBestPlayer;
+    [SerializeField] LoadGame dataload = new LoadGame();
 
     public void Awake()
     {
         
-        data.LoadBestPlayer();
+        dataload.LoadBestPlayer();
     
     }
 
     public void startScene()
     {
+
         SceneManager.LoadScene("LevelOne");
 
     }
 
     public void Start()
     {
-        Show();
+        
+        SetPlayerName(dataload.BestPlayer,dataload.BestScore);
     }
 
-
-    public void Show()
+   public void SetPlayerName(string bestplayer,int bestscore)
     {
        
-        MenuPlayer.text = $"Best Player :  {data.BestPlayer}        Best Score : {data.BestScore}";
+        ScoreBestPlayer.text = $"Best Player :  {bestplayer}        " +
+                               $"Best Score : {bestscore}";
+    
     }
 
     public void SetPlayerName()
     {
-        PlayerData.Instance.PlayerName = PlayerNameInput.text;
+        
+        PlayerDataForSession.Instance.PlayerName = PlayerNameInput.text;
 
     }
 
