@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Move the player and arrow key input
+    //POLIMORFISMO
     void MoviePlayer()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
         playerRb.AddForce(Vector3.forward * speed * verticalInput);
         playerRb.AddForce(Vector3.right * speed * horizontalInput);
     }
-
+    //POLIMORFISMO
     void MoviePlayer(float zbound)
     {
 

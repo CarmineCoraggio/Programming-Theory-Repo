@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+// INHERITANCE
 [SerializeField]
 class LoadGame : PersistenceDataPlayer
 {

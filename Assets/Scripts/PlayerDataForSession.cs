@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDataForSession : MonoBehaviour
 {
-    
+    // ENCAPSULATION
     public static PlayerDataForSession Instance { get; private set; }
 
     private string playername;

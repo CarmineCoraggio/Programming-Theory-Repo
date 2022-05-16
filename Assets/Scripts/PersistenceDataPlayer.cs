@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-
+//ASTRACTION
 abstract class PersistenceDataPlayer
 {
     public string PlayerName;
